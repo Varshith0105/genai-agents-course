@@ -1,4 +1,4 @@
-"""Session 1 checkpoint. Run with:  uv run pytest tests/test_setup.py"""
+"""Session 2 checkpoint. Run with:  uv run pytest tests/test_setup.py"""
 import os
 import sys
 from dotenv import load_dotenv
@@ -23,7 +23,7 @@ def test_model_answers():
     client = OpenAI(base_url=os.getenv("BASE_URL"), api_key=os.getenv("API_KEY"))
     r = client.chat.completions.create(
         model=os.getenv("MODEL"),
-        max_tokens=5,
+        max_tokens=64,
         messages=[{"role": "user", "content": "Reply with OK"}],
     )
     assert r.choices[0].message.content
