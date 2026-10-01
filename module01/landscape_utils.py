@@ -9,7 +9,7 @@ import time
 from pathlib import Path
 
 CATALOG = Path(__file__).with_name("models_catalog.json")
-USD_TO_INR = 84.0          # edit
+USD_TO_INR = 95.0          # edit
 DAYS = 30
 
 # ---------------------------------------------------------------- catalog
@@ -26,7 +26,7 @@ SCENARIOS = {
         "weights": {"cost": 0.6, "latency": 0.2, "quality": 0.2}, "min_quality": 2,
     },
     "documents": {
-        "title": "Loan-document analysis (customer PII)",
+        "title": "Loan-document analysis (customer PII)", #Personal Identifiable Information(PII)
         "calls_per_day": 2_000, "in_tokens": 6_000, "out_tokens": 500,
         "needs_on_prem": True, "max_latency_s": None, "min_ctx": 16_000,
         "weights": {"cost": 0.2, "latency": 0.2, "quality": 0.6}, "min_quality": 3,
