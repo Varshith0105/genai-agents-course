@@ -9,7 +9,7 @@ import time
 from pathlib import Path
 
 CATALOG = Path(__file__).with_name("models_catalog.json")
-USD_TO_INR = 95.0          # edit
+USD_TO_INR = 94.0          # edit
 DAYS = 30
 
 # ---------------------------------------------------------------- catalog
@@ -26,7 +26,7 @@ SCENARIOS = {
         "weights": {"cost": 0.6, "latency": 0.2, "quality": 0.2}, "min_quality": 2,
     },
     "documents": {
-        "title": "Loan-document analysis (customer PII)", #Personal Identifiable Information(PII)
+        "title": "Loan-document analysis (customer PII)",
         "calls_per_day": 2_000, "in_tokens": 6_000, "out_tokens": 500,
         "needs_on_prem": True, "max_latency_s": None, "min_ctx": 16_000,
         "weights": {"cost": 0.2, "latency": 0.2, "quality": 0.6}, "min_quality": 3,
@@ -84,7 +84,7 @@ def _norm_cost(v, lo, hi):
     every cheap model look identical, so we compare on a log scale."""
     return _norm_low_is_good(math.log1p(v), math.log1p(lo), math.log1p(hi))
 
-
+## ranking score 
 def rank(scenario: dict, catalog: list[dict] | None = None, overrides: dict | None = None):
     """Returns (ranked, excluded). ranked: list of dicts with score 0-100; excluded: list of (name, reasons)."""
     catalog = catalog or load_catalog()
