@@ -5,6 +5,9 @@ import sys
 from pathlib import Path
 
 import pytest
+from dotenv import load_dotenv
+
+load_dotenv(override=True)   # read .env BEFORE the skip checks below, so a key stored only in .env is seen
 
 sys.path.insert(0, str(Path(__file__).parent))
 from appointment_flow import (Slots, alternatives, confirmation, find_slot, has_emergency,  # noqa: E402

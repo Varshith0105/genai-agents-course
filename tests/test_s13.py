@@ -5,6 +5,9 @@ import sys
 from pathlib import Path
 
 import pytest
+from dotenv import load_dotenv
+
+load_dotenv(override=True)   # read .env BEFORE the skip checks below, so a key stored only in .env is seen
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "module01"))
 from vision_utils import (KYC_JSON_SCHEMA, KycRecord, SAMPLE_DIR, TRANSCRIBE_PROMPT, compare_to_truth,  # noqa: E402

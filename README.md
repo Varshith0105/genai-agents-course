@@ -152,6 +152,17 @@ uv run pytest showcase/a3_healthcare/test_a3_healthcare.py
 Safety rule -> intent router -> slot filling -> booking -> confirmation. The model reads; the code decides.
 See `showcase/a3_healthcare/README.md`.
 
+## Session 14 — prompt anatomy (Module 2 begins) and your own work repository
+
+```powershell
+git pull
+uv sync                                  # no new packages
+uv run jupyter lab module02/s14_prompt_anatomy.ipynb
+uv run pytest tests/test_s14.py          # checkpoint (offline-safe)
+```
+Pre-read: `module02/reading_prompt_anatomy.md`. **Before class:** read `module02/work_repo_steps.md` and have your GitHub username ready.
+Terms: `module02/terms_s14.md`. Your submission is a pushed `prompts/library.md` in **your own** `genai-course-work` repository, not this one.
+
 ## Layout
 ```
 module01/                   Session 9b notebook, helpers, pre-read
@@ -165,6 +176,8 @@ showcase/a3_healthcare/     Showcase A3 (Healthcare workflow) + its own tests
 tests/test_s11.py           Session 11 checkpoint
 tests/test_s12.py           Session 12 checkpoint
 tests/test_s13.py           Session 13 checkpoint
+tests/test_s14.py           Session 14 checkpoint
+module02/                   Module 2 (prompt engineering): S14 notebook, helpers, work-repo steps
 cheatsheet/python-for-agents.md
 .env.example                copy to .env
 pyproject.toml              pinned dependencies (uv sync)

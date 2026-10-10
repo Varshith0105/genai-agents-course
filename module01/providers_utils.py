@@ -13,7 +13,8 @@ GEMINI_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/openai/"
 
 def groq_client() -> OpenAI:
     """The provider pinned in .env for the rest of the course (default: Groq)."""
-    return OpenAI(base_url=os.getenv("BASE_URL"), api_key=os.getenv("API_KEY"))
+    return OpenAI(base_url=os.getenv("BASE_URL"), api_key=os.getenv("API_KEY"),
+                  timeout=60.0, max_retries=3)
 
 
 def gemini_client() -> OpenAI:
